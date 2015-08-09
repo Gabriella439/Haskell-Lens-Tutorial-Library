@@ -1,0 +1,41 @@
+Name: lens-tutorial
+Version: 1.0.0
+Cabal-Version: >=1.10
+Build-Type: Simple
+License: BSD3
+License-File: LICENSE
+Copyright: 2015 Gabriel Gonzalez
+Author: Gabriel Gonzalez
+Maintainer: Gabriel439@gmail.com
+Bug-Reports: https://github.com/Gabriel439/Haskell-Lens-Tutorial-Library/issues
+Synopsis: Tutorial for the lens library
+Description: This is a basic tutorial that you can use to get started with
+    the @lens@ library.  This tutorial covers:
+    .
+    * The motivation behind the @lens@ library
+    .
+    * How to use the library for the most common use cases
+    .
+    * How to interpret type errors
+    .
+    * Basic familiarity with how lenses work under the hood
+Category: Control
+Source-Repository head
+    Type: git
+    Location: https://github.com/Gabriel439/Haskell-Lens-Tutorial-Library
+
+Library
+    HS-Source-Dirs: src
+    Build-Depends: base, lens
+    Exposed-Modules: Control.Lens.Tutorial
+    Default-Language: Haskell2010
+
+test-suite tests
+    Type: exitcode-stdio-1.0
+    HS-Source-Dirs: test
+    Main-Is: Main.hs
+    GHC-Options: -O2 -Wall
+    Default-Language: Haskell2010
+    Build-Depends:
+        base                            ,
+        doctest      >= 0.9.12 && < 0.11
