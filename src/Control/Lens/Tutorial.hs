@@ -827,6 +827,13 @@ import Data.Monoid (Monoid)
 
     <https://github.com/ekmett/lens/tree/master/examples>
 
+    If you prefer light-weight @lens@-compatible libraries, then check out
+    @lens-simple@ or @micro-lens@:
+
+    * <http://hackage.haskell.org/package/microlens microlens>
+
+    * <http://hackage.haskell.org/package/lens-simple lens-simple>
+
     If you would like a broader survey of lens features, then you can check
     out these tutorials:
 
