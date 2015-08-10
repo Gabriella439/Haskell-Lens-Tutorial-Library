@@ -785,11 +785,13 @@ import Data.Monoid (Monoid)
     lenses and increase compile times.  So for small projects the overhead of
     adding lenses may dwarf the benefits.
 
-    @lens@ is also a library with a large dependency tree.  If you need a
-    more light-weight alternative you can use the @lens-simple@ or @microlens@
-    library, each of which provides a restricted subset of the @lens@ library
-    with a much smaller dependency tree.  In contrast, this @lens@ library
-    focuses on being \"batteries included\" and significantly more general.
+    @lens@ is also a library with a large dependency tree, focused on being
+    \"batteries included\" and covering a large cross-section of the Haskell
+    ecosystem. Browsing the Hackage listing you will find support modules
+    ranging from "System.FilePath.Lens" to "Control.Parallel.Strategies.Lens",
+    and many more. If you need a more light-weight alternative you can use
+    the @lens-simple@ or @microlens@ library, each of which provides a
+    restricted subset of the @lens@ library with a much smaller dependency tree.
 
     The ideal use case for the @lens@ library is a medium-to-large project with
     rich and deeply nested types.  In these large projects the benefits of using
