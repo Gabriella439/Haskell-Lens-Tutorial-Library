@@ -213,7 +213,7 @@ import Data.Monoid (Monoid)
 
     Similarly, if you pick @(f = `Const` b)@:
 
-> type Getting b a b  = (b -> Const b b) -> (a -> Const b b)
+> type Getting b a b  = (b -> Const b b) -> (a -> Const b a)
 >
 > -- ... equivalent to: (b ->       b  ) -> (a ->       b  )
 >
