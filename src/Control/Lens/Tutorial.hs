@@ -713,7 +713,7 @@ import Data.Monoid (Monoid)
 
     ... can be specialized to use @(`Const` b)@ in place of @f@:
 
-> (b -> Const b b) -> (a -> Const b b)
+> (b -> Const b b) -> (a -> Const b a)
 
 
     ... making it a valid argument to `view`.
