@@ -125,7 +125,7 @@ import Data.Monoid (Monoid)
 -- > Molecule
 -- >     { _atoms =
 -- >         [ Atom { _element = "C", _point = Point { _x = 2.0, _y = 2.0 } }
--- >         , Atom { _element = ")", _point = Point { _x = 4.0, _y = 4.0 } }
+-- >         , Atom { _element = "O", _point = Point { _x = 4.0, _y = 4.0 } }
 -- >         ]
 -- >     }
 -- 
