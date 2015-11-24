@@ -614,13 +614,13 @@ import Data.Monoid (Monoid)
     `Traversal'` but you can only use `view` on a `Lens'`.  We can see why by
     studying the (simplified) type and implementation of `over`:
 
-> over :: ((b -> Identity b) -> (a -> Identity b)) -> (b -> b) -> a -> a
+> over :: ((b -> Identity b) -> (a -> Identity a)) -> (b -> b) -> a -> a
 > over setter f x = runIdentity (setter (\y -> Identity (f y)) x)
 
     To follow the implementation, just step slowly through the types.  Here
     are the types of the arguments to `over`:
 
-> setter :: (b -> Identity b) -> (a -> Identity b)
+> setter :: (b -> Identity b) -> (a -> Identity a)
 > f      :: b -> b
 > x      :: a
 
