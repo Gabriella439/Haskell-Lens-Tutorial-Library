@@ -48,6 +48,19 @@ module Control.Lens.Tutorial (
 
     -- * Conclusion
     -- $conclusion
+
+    -- * Exports
+    -- $exports
+      Atom(..)
+    , element
+    , point
+    , Point(..)
+    , x
+    , y
+    , Molecule(..)
+    , atoms
+    , Pair(..)
+    , traverse
     ) where
 
 import Control.Applicative (Applicative)
@@ -843,6 +856,11 @@ Prisms, Isos and JSON functionality
     * <http://www.haskellforall.com/2013/05/program-imperatively-using-haskell.html Program imperatively using Haskell lenses> - Illustrates lens support for stateful code
 -}
 
+{- $exports
+    These are the same types and lenses used throughout the tutorial, exported
+    for your convenience.
+-}
+
 data Atom = Atom { _element :: String, _point :: Point } deriving (Show)
 
 data Point = Point { _x :: Double, _y :: Double } deriving (Show)
@@ -855,6 +873,8 @@ makeLenses ''Atom
 makeLenses ''Point
 makeLenses ''Molecule
 
+-- These purely exist to ensure that the examples still type-check.  I don't
+-- export them, though, so that they won't conflict with the user's code.
 shiftAtomX :: Atom -> Atom
 shiftAtomX = over (point . x) (+ 1)
 
