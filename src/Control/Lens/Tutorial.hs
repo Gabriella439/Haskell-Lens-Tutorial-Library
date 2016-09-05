@@ -262,7 +262,7 @@ import Data.Monoid (Monoid)
     However, sometimes Template Haskell is not an option, so we can also use
     the `lens` utility function to build lenses.  This utility has type:
 
-> lens :: (a -> b) -> (b -> a -> a) -> Lens' a b
+> lens :: (a -> b) -> (a -> b -> a) -> Lens' a b
 
     The first argument is a \"getter\" (a way to extract a @\'b\'@ from an
     @\'a\'@).  The second argument is a \"setter\" (given a @b@, update an
@@ -270,7 +270,7 @@ import Data.Monoid (Monoid)
     use `lens` like this:
 
 > point :: Lens' Atom Point
-> point = lens _point (\newPoint atom -> atom { _point = newPoint })
+> point = lens _point (\atom newPoint -> atom { _point = newPoint })
 
     You can even define lenses without incurring a dependency on the @lens@
     library.  Remember that lenses are just higher-order functions over
