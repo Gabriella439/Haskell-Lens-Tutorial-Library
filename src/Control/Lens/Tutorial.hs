@@ -229,10 +229,11 @@ import Data.Monoid (Monoid)
 > type Getting b a b  = (b -> Const b b) -> (a -> Const b a)
 >
 > -- ... equivalent to: (b ->       b  ) -> (a ->       b  )
->
-> -- ... equivalent to:                     (a ->       b  )
 
-    ... you can build a `view`-like function.
+    ... and if you apply a function of that type to `id` then you get a
+    `view`-like function
+
+> --                                        (a ->       b  )
 
     Those are not the only two `Functor`s we can pick.  In fact, we can do a
     lot more with lenses than just get and set values, but those are the two
