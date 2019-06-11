@@ -65,6 +65,7 @@ module Control.Lens.Tutorial (
 
 import Control.Applicative (Applicative)
 import Control.Lens hiding (element)
+import Control.Lens.TH
 import Data.Foldable (Foldable)
 import Data.Monoid (Monoid)
 
@@ -94,13 +95,14 @@ import Data.Monoid (Monoid)
 -- > {-# LANGUAGE TemplateHaskell #-}
 -- >
 -- > import Control.Lens hiding (element)
+-- > import Control.Lens.TH
 -- >
 -- > data Atom = Atom { _element :: String, _point :: Point } deriving (Show)
 -- >
 -- > data Point = Point { _x :: Double, _y :: Double } deriving (Show)
 -- >
--- > makeLenses ''Atom
--- > makeLenses ''Point
+-- > $(makeLenses ''Atom)
+-- > $(makeLenses ''Point)
 -- >
 -- > shiftAtomX :: Atom -> Atom
 -- > shiftAtomX = over (point . x) (+ 1)
@@ -120,7 +122,7 @@ import Data.Monoid (Monoid)
 -- 
 --     We could shift an entire @Molecule@ by writing:
 -- 
--- > makeLenses ''Molecule
+-- > $(makeLenses ''Molecule)
 -- >
 -- > shiftMoleculeX :: Molecule -> Molecule
 -- > shiftMoleculeX = over (atoms . traverse . point . x) (+ 1)
@@ -870,9 +872,9 @@ data Molecule = Molecule { _atoms :: [Atom] } deriving (Show)
 
 data Pair a = Pair a a deriving (Functor, Foldable, Traversable)
 
-makeLenses ''Atom
-makeLenses ''Point
-makeLenses ''Molecule
+$(makeLenses ''Atom)
+$(makeLenses ''Point)
+$(makeLenses ''Molecule)
 
 -- These purely exist to ensure that the examples still type-check.  I don't
 -- export them, though, so that they won't conflict with the user's code.
