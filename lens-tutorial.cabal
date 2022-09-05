@@ -4,10 +4,10 @@ Cabal-Version: >=1.10
 Build-Type: Simple
 License: BSD3
 License-File: LICENSE
-Copyright: 2015 Gabriel Gonzalez
-Author: Gabriel Gonzalez
-Maintainer: Gabriel439@gmail.com
-Bug-Reports: https://github.com/Gabriel439/Haskell-Lens-Tutorial-Library/issues
+Copyright: 2015 Gabriella Gonzalez
+Author: Gabriella Gonzalez
+Maintainer: GenuineGabriella@gmail.com
+Bug-Reports: https://github.com/Gabriella439/Haskell-Lens-Tutorial-Library/issues
 Synopsis: Tutorial for the lens library
 Description: This is a basic tutorial that you can use to get started with
     the @lens@ library.  This tutorial covers:
@@ -22,7 +22,7 @@ Description: This is a basic tutorial that you can use to get started with
 Category: Control
 Source-Repository head
     Type: git
-    Location: https://github.com/Gabriel439/Haskell-Lens-Tutorial-Library
+    Location: https://github.com/Gabriella439/Haskell-Lens-Tutorial-Library
 
 Library
     HS-Source-Dirs: src
