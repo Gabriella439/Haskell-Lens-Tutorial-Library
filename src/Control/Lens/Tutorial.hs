@@ -343,7 +343,7 @@ import Data.Monoid (Monoid)
     `view` and `over` are fundamental because they distribute over lens
     composition:
 
-> view (lens1 . lens2) = (view lens2) . (view lens1)
+> view (lens1 . lens2) = (view lens1) . (view lens2)
 >
 > view id = id
 
