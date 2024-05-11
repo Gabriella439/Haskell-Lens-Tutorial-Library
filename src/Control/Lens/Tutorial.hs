@@ -259,8 +259,8 @@ import Data.Monoid (Monoid)
 > x       :: Lens' Point Double
 > y       :: Lens' Point Double
 
-    `makeLenses` creates one lens per field prefixed with an underscore.  The
-    lens has the same name as the field without the underscore.
+    For each field prefixed with an underscore, `makeLenses` creates one lens
+    which has the same name as the corresponding field without the underscore.
 
     However, sometimes Template Haskell is not an option, so we can also use
     the `lens` utility function to build lenses.  This utility has type:
